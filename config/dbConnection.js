@@ -4,7 +4,7 @@ const constants = require("../constants/constants")
 
 const mongoose = require('mongoose');
 
-const mongoURL = process.env.DATABASE_MONGO_DB_CONN;
+const mongoURL = process.env.MONGODB_URI;
 
 mongoose.connect(mongoURL);
 
