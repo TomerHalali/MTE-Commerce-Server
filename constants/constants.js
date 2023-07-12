@@ -11,7 +11,9 @@ const serverConstants = {
   const authConstants = {
     HELLO: "Welcome to MTE-Commerce!",
     EMAIL_ADDRESS: "emailAddress",
-    AUTHORIZATION: "authorization"
+    AUTHORIZATION: "authorization",
+    REASOM: "User exist with the email:",
+    SAVED: "User saved successfully"
   };
 
   const crypto = {
