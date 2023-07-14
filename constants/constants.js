@@ -12,7 +12,7 @@ const serverConstants = {
     HELLO: "Welcome to MTE-Commerce!",
     EMAIL_ADDRESS: "emailAddress",
     AUTHORIZATION: "authorization",
-    REASOM: "User exist with the email:",
+    REASOM: "User exist with this email",
     SAVED: "User saved successfully"
   };
 

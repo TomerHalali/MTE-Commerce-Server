@@ -13,7 +13,7 @@ const generateAccessToken = (payload) => {
 };
 
 const login = async (req, res) => {
-  const email = req.body.email;
+  const email = req.body.email.toLowerCase();
 
   if (emailValidation(email)) {
     const password = crypto.encryptString(req.body.password);
@@ -42,6 +42,7 @@ const registration = async (req, res) => {
     const userExist = await User.findOne({ email: payload.email });
     let response = {
       userCreated: false,
+      email: payload.email,
       reason: `${constants.authConstants.REASOM} ${payload.email}`,
     };
 
@@ -71,6 +72,7 @@ const registration = async (req, res) => {
         .save()
         .then(() => {
           response.userCreated = true;
+          response.email = payload.email
           response.reason = constants.authConstants.SAVED;
 
           res.status(200).send(response);
