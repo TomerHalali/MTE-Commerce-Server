@@ -3,8 +3,8 @@ const Categories = require("../models/Categories");
 const Sections = require("../models/Sections");
 
 const getAllCategories = async (req, res) => {
-  const sections = await Sections.find();
-  const categories = await Categories.find()
+  const sections = await Sections.find({disabled : false});
+  const categories = await Categories.find({disabled : false})
 
   const result = sections.map((section) => {
 
