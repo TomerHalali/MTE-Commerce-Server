@@ -5,6 +5,8 @@ const categoriesSchema = new mongoose.Schema({
   name: String,
   description: String,
   parentCategory: String,
+  sectionId: String,
+  disabled: Boolean
 });
 
 module.exports = Categories = mongoose.model("Categories", categoriesSchema);
