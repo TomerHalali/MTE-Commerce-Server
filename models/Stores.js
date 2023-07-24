@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 const StoresSchema = new mongoose.Schema({
   storeId: String,
   storeInformation: Array,
-  usefullLinks: Array,
+  usefulLinks: Array,
   openingHours: Array,
-  aboutText: String
+  aboutText: String,
+  mediaLinks: Array
 });
 
 module.exports = Stores = mongoose.model("Stores", StoresSchema);
