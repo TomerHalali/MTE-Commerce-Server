@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const authController = require("../../controllers/authController");
-const topicsController = require("../../controllers/topicsController")
+const sectionsController = require("../../controllers/sectionsController")
 const storeController = require("../../controllers/storeController")
 
 router.use("/storeManagement", storeController);
 router.use("/authManagement", authController);
-router.use("/topicsManagement", topicsController);
+router.use("/sectionsManagement", sectionsController);
 
 
 module.exports = router;

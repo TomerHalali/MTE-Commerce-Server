@@ -2,7 +2,7 @@ let router = require("express").Router();
 const Categories = require("../models/Categories");
 const Sections = require("../models/Sections");
 
-const getAllCategories = async (req, res) => {
+const getAllSections = async (req, res) => {
   const sections = await Sections.find({disabled : false});
   const categories = await Categories.find({disabled : false})
 
@@ -11,7 +11,7 @@ const getAllCategories = async (req, res) => {
     const sectionCategories = categories.filter(category => {
         return category.sectionId === section.sectionId && category.parentCategory === ""
     });
-  
+
     const categoriesWithSubCategories = sectionCategories.map(category => {
       const subCategories = categories.filter(subCategory => subCategory.parentCategory === category.categoryId);
       return {
@@ -24,7 +24,7 @@ const getAllCategories = async (req, res) => {
         })),
       };
     });
-  
+
     return {
       sectionId : section.sectionId,
       sectionName: section.name,
@@ -36,6 +36,6 @@ const getAllCategories = async (req, res) => {
 
 };
 
-router.get("/categories", getAllCategories);
+router.get("/sections", getAllSections);
 
 module.exports = router;
