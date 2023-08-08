@@ -7,7 +7,8 @@ const StoresSchema = new mongoose.Schema({
   openingHours: Array,
   aboutText: String,
   mediaLinks: Array,
-  storeName: String
+  storeName: String,
+  ourServices: Array
 });
 
 module.exports = Stores = mongoose.model("Stores", StoresSchema);
