@@ -10,7 +10,8 @@ const getStoreInformation = async (req, res) => {
         openingHours: store[0].openingHours,
         mediaLinks: store[0].mediaLinks,
         information: store[0].information,
-        storeName: store[0].storeName
+        storeName: store[0].storeName,
+        ourServices: store[0].ourServices
     };
 
     res.status(200).send(storeInformation);
