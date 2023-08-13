@@ -3,11 +3,18 @@ const Filters = require("../models/Filters");
 
 const getFiltersByParentId = async (req, res) => {
   const id = req.query.id;
-  const filters = await Filters.find({
+  const allFilters = await Filters.find({
     $or: [{ categoryId: `${id}` }, { sectionId: `${id}` }],
   });
 
-  res.status(200).send(filters);
+  const filterOptionsObj = allFilters.map((filter) => {
+    return {
+      filterName: filter.filterName,
+      filterOptions: filter.options,
+    };
+  });
+
+  res.status(200).send(filterOptionsObj);
 };
 
 router.get("/filters", getFiltersByParentId);
