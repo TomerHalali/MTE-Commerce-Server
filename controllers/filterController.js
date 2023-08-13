@@ -10,7 +10,8 @@ const getFiltersByParentId = async (req, res) => {
   const filterOptionsObj = allFilters.map((filter) => {
     return {
       filterName: filter.filterName,
-      filterOptions: filter.options,
+      filterLabel: filter.filterLabel,
+      filterOptions: filter.filterOptions,
     };
   });
 

@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const filtersSchema = new mongoose.Schema({
   filterId: String,
   filterName: String,
-  options: Array,
+  filterLabel: String,
+  filterOptions: Object,
   categoryId: Array,
   sectionId: Array,
 });
