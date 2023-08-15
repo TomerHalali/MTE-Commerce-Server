@@ -4,7 +4,7 @@ const filtersSchema = new mongoose.Schema({
   filterId: String,
   filterName: String,
   filterLabel: String,
-  filterOptions: Object,
+  filterOptions: Array,
   categoryId: Array,
   sectionId: Array,
 });

@@ -19,7 +19,6 @@ const getAllSections = async (req, res) => {
         categoryName: category.name,
         subCategories: subCategories.map(subCategory => ({
           categoryId: subCategory.categoryId,
-          parentCategoryId: subCategory.parentCategory,
           categoryName: subCategory.name,
         })),
       };
