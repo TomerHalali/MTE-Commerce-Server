@@ -1,12 +1,12 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const constants = require("../constants/constants")
-
-const mongoose = require('mongoose');
-
+const mongoose = require('mongoose').default;
 const mongoURL = process.env.MONGODB_URI;
 
-mongoose.connect(mongoURL);
+mongoose.connect(mongoURL).then(() => {
+
+});
 
 const database = mongoose.connection;
 
