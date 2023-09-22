@@ -9,7 +9,8 @@ const StoresSchema = new mongoose.Schema({
     mediaLinks: Array,
     storeName: String,
     ourServices: Array,
-    headerAddsTexts: Array
+    headerAddsTexts: Array,
+    mainBannerUrl: String
 });
 
 module.exports = Stores = mongoose.model("Stores", StoresSchema);
